@@ -1,11 +1,10 @@
 pipeline {
   environment {
     VERCEL_PROJECT_NAME = 'devops04-quiz1'
-    VERCEL_TOKEN = credentials('devops04-vercel-token') // ดึงจาก Jenkins
+    VERCEL_TOKEN = credentials('devops04-vercel-token')
   }
   agent {
     kubernetes {
-      // This YAML defines the "Docker Container" you want to use
       yaml '''
         apiVersion: v1
         kind: Pod
